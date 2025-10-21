@@ -4,6 +4,9 @@ m.orders_id
 , ROUND(m.margin + s.shipping_fee - logCost - ship_cost, 2) AS operational_margin
 , m.revenue AS revenue
 , m.quantity AS quantity
+, purchase_cost 
+, shipping_fee
+, logCost
 FROM {{ ref('int_orders_margin') }} AS m
 LEFT JOIN {{ ref('ship') }} AS s
 USING (orders_id)
