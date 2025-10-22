@@ -7,6 +7,8 @@ m.orders_id
 , purchase_cost 
 , shipping_fee
 , logCost
+, m.margin
+, ship_cost
 FROM {{ ref('int_orders_margin') }} AS m
 LEFT JOIN {{ ref('ship') }} AS s
 USING (orders_id)
