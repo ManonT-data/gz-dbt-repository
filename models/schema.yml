@@ -73,3 +73,21 @@ sources:
             tests:
               - unique
               - not_null
+models: #je recherche dans models
+  - name: int_campaigns_days # mon fichier 
+    columns: # il va tester ici les colonnes en fonctions des tests demandés (ici les not_null)
+      - name: impression
+        tests:
+         - not_null
+      - name: click
+        tests:
+         - not_null
+      - name: ads_cost
+        tests:
+         - not_null
+  - name: finance_campaigns_days # mon fichier 
+    columns: # il va tester ici les colonnes en fonctions des tests demandés (ici les not_null)
+      - name: ads_margin
+        tests:
+         - not_null
+         
