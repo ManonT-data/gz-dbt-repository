@@ -13,15 +13,12 @@ sources:
            warn_after:
              count: 90
              period: day  
-
         columns:
           - name: "(orders_id || '-' || pdt_id)"
             description: primary key of the table
             tests:
               - unique
               - not_null
-  
-
       - name: product
         identifier: raw_gz_product
         description: purchase_price by products_id
@@ -36,6 +33,42 @@ sources:
         description: shipping_fee by orders_id
         columns:
           - name: orders_id
+            description: primary key of the table
+            tests:
+              - unique
+              - not_null
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: ads_cost by campaign_key by day
+        columns:
+          - name: "(date_date || '-' || campaign_key)"
+            description: primary key of the table
+            tests:
+              - unique
+              - not_null
+      - name: bing
+        identifier: raw_gz_bing
+        description: ads_cost by campaign_key by day
+        columns:
+          - name: "(date_date || '-' || campaign_key)"
+            description: primary key of the table
+            tests:
+              - unique
+              - not_null
+      - name: criteo
+        identifier: raw_gz_criteo
+        description: ads_cost by campaign_key by day
+        columns:
+          - name: "(date_date || '-' || campaign_key)"
+            description: primary key of the table
+            tests:
+              - unique
+              - not_null
+      - name: facebook
+        identifier: raw_gz_facebook
+        description: ads_cost by campaign_key by day
+        columns:
+          - name: "(date_date || '-' || campaign_key)"
             description: primary key of the table
             tests:
               - unique
